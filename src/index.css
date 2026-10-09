@@ -1,0 +1,123 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/fredoka';
+@import '@fontsource-variable/nunito-sans';
+
+/* Seafoam palette, taken from the Jelly-in-a-press logo. */
+@theme {
+  --font-display: 'Fredoka Variable', 'Nunito Sans Variable', ui-rounded, system-ui, sans-serif;
+  --font-sans: 'Nunito Sans Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Brand colours stay the same in light and dark. */
+  --color-jelly: #2ec4a6;
+  --color-jelly-deep: #1fa088;
+  --color-coral: #ff8a5c;
+  --color-mint: #ddf7f0;
+  --color-ink: #133238;
+
+  /* Surfaces and text change with the theme. */
+  --color-bg: #f5fbf9;
+  --color-surface: #ffffff;
+  --color-tint: #e9f6f2;
+  --color-fg: #133238;
+  --color-muted: #4c6a6f;
+  --color-line: #d3e7e1;
+  --color-good: #157a63;
+  --color-bad: #c2412d;
+
+  --animate-squish: squish 0.5s cubic-bezier(0.3, 1.6, 0.5, 1);
+  --animate-press: press 1.1s ease-in-out infinite;
+  --animate-plate: plate 1.1s ease-in-out infinite;
+  --animate-bob: bob 2.4s ease-in-out infinite;
+
+  @keyframes squish {
+    0% {
+      transform: scale(1, 1);
+    }
+    40% {
+      transform: scale(1.12, 0.84);
+    }
+    70% {
+      transform: scale(0.96, 1.05);
+    }
+    100% {
+      transform: scale(1, 1);
+    }
+  }
+  @keyframes press {
+    0%,
+    100% {
+      transform: scale(1, 1);
+    }
+    50% {
+      transform: scale(1.1, 0.86);
+    }
+  }
+  @keyframes plate {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(7px);
+    }
+  }
+  @keyframes bob {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0d1e21;
+    --color-surface: #13292d;
+    --color-tint: #1a363b;
+    --color-fg: #e6f5f1;
+    --color-muted: #9cbdb7;
+    --color-line: #24474c;
+    --color-good: #5fdcbf;
+    --color-bad: #ff8f7a;
+    color-scheme: dark;
+  }
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-bg text-fg font-sans antialiased;
+    min-height: 100dvh;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+  :focus-visible {
+    @apply outline-3 outline-offset-2 outline-jelly-deep;
+  }
+}
+
+/* SVG parts of the mascot squash from their bottom edge. */
+.mascot-body,
+.mascot-plate {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
