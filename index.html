@@ -3,18 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="description" content="Squoosh your images and PDFs right in the browser. Nothing gets uploaded." />
+    <meta
+      name="description"
+      content="Compress JPEG, PNG, WebP, AVIF and PDF files right in your browser. Free, private and offline. Nothing gets uploaded."
+    />
     <meta name="theme-color" content="#F5FBF9" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0D1E21" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://squooshy.eidoriantan.com/" />
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png" />
 
-    <title>Squooshy</title>
+    <!-- Social previews -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Squooshy" />
+    <meta property="og:url" content="https://squooshy.eidoriantan.com/" />
+    <meta property="og:title" content="Squooshy: compress images and PDFs in your browser" />
+    <meta
+      property="og:description"
+      content="Shrink JPEG, PNG, WebP, AVIF and PDF files on your own device. Free, private and offline. Nothing gets uploaded."
+    />
+    <meta property="og:image" content="https://squooshy.eidoriantan.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="The Squooshy mascot, a jelly cube under a press, next to the app name" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Squooshy: compress images and PDFs in your browser" />
+    <meta
+      name="twitter:description"
+      content="Shrink JPEG, PNG, WebP, AVIF and PDF files on your own device. Free, private and offline. Nothing gets uploaded."
+    />
+    <meta name="twitter:image" content="https://squooshy.eidoriantan.com/og-image.png" />
+    <meta name="twitter:image:alt" content="The Squooshy mascot, a jelly cube under a press, next to the app name" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Squooshy",
+        "url": "https://squooshy.eidoriantan.com/",
+        "description": "Compress JPEG, PNG, WebP, AVIF and PDF files right in your browser. Free, private and offline. Nothing gets uploaded.",
+        "image": "https://squooshy.eidoriantan.com/og-image.png",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript and WebAssembly.",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "featureList": [
+          "Compress JPEG, PNG, WebP and AVIF images",
+          "Compress PDFs while keeping text searchable",
+          "Convert between image formats",
+          "Batch compression with ZIP download",
+          "Before and after comparison",
+          "Works offline and installs as an app",
+          "Files never leave your device"
+        ],
+        "author": { "@type": "Person", "name": "eidoriantan", "url": "https://eidoriantan.com" },
+        "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+      }
+    </script>
+
+    <title>Squooshy: compress images and PDFs in your browser</title>
   </head>
 
   <body>
     <div id="root"></div>
+    <noscript>
+      <h1>Squooshy</h1>
+      <p>
+        Squooshy compresses JPEG, PNG, WebP, AVIF and PDF files right in your browser. Your files never leave your
+        device. Please turn on JavaScript to use it.
+      </p>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
